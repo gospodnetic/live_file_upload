@@ -8,6 +8,7 @@ An example single upload page made by following the [Tracey Onim Medium post](ht
 * Ensure `uploads` directory is available in `priv/static`
 * Added a general error message if there are too many files selected
 * Enable upload button only if there is something to upload and no errors are present
+* Added progress bar
 
 # Running the example
 To start your Phoenix server:
@@ -21,4 +22,4 @@ To start your Phoenix server:
   * Create and migrate your database with `mix ecto.setup`
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
-Now you can visit [`localhost:3000`](http://localhost:3000) from your browser.
+Now you can visit [`localhost:2000`](http://localhost:3000) from your browser.
