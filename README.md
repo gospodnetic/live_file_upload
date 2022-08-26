@@ -12,6 +12,11 @@ An example single upload page made by following the [Tracey Onim Medium post](ht
 # Running the example
 To start your Phoenix server:
 
+  * Install npm dependencies with
+  ```
+  cd assets
+  npm install
+  ```
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
