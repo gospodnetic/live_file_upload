@@ -27,12 +27,10 @@ defmodule FileUploadTestWeb.IndexLive do
   end
 
   def handle_event("cancel-upload", %{"ref" => ref}, socket) do
-    IO.inspect(ref, label: "Cancelling upload")
-    # {:noreply, socket}
     {:noreply, cancel_upload(socket, :my_images, ref)}
   end
 
-  def handle_event("save", params, socket) do
+  def handle_event("save", _params, socket) do
     uploaded_files =
     consume_uploaded_entries(socket, :my_images, fn %{path: path}, _entry ->
       dest = Path.join("priv/static/uploads", Path.basename(path))
@@ -46,11 +44,11 @@ defmodule FileUploadTestWeb.IndexLive do
   def error_to_string(:not_accepted), do: "Unacceptable file type"
   def error_to_string(:too_many_files), do: "You have selected too many files"
 
-  @impl
+  @impl true
   def render(assigns) do
     ~H"""
       <div class="container p-0">
-        <.form let={f} for={@changeset} phx-change="validate" phx-submit="save">
+        <.form let={_f} for={@changeset} phx-change="validate" phx-submit="save">
           <div class="row">
             <div class="col-4">
               <%= live_file_input @uploads.my_images, class: "form-control"%>
